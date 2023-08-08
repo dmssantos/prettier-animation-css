@@ -1,0 +1,129 @@
+:root {
+  --red: #ea5e5e;
+  --yellow: #f7ba3e;
+  --blue: #56b3b4;
+  --purple: #bf85bf;
+  --backbround: #1a2b34;
+  --gray: #465862;
+  --unit: 10px;
+}
+
+body {
+  background: var(--backbround);
+  margin: 0;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.container {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--unit);
+  overflow: hidden;
+}
+
+.container:hover::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: .5;
+  background: red;
+}
+
+.container:hover {
+  border: 1px solid white;
+}
+
+.row {
+  height: var(--unit);
+  display: flex;
+  justify-content: center;
+  gap: var(--unit);
+  animation: load-row 1s calc(var(--delay) * 500ms) forwards;
+}
+
+.cell {
+  height: 100%;
+  width: calc(var(--size, 2) * var(--unit));
+  background-color: var(--gray);
+  border-radius: 1000px;
+}
+
+.cell.size-2 {
+  --size: 2
+}
+
+.cell.size-4 {
+  --size: 4
+}
+
+.cell.size-6 {
+  --size: 6
+}
+
+.cell.size-8 {
+  --size: 8
+}
+
+.cell.size-10 {
+  --size: 10
+}
+
+.cell.size-12 {
+  --size: 12
+}
+
+.cell.size-14 {
+  --size: 14
+}
+
+.cell.size-16 {
+  --size: 16
+}
+
+.cell.size-18 {
+  --size: 18
+}
+
+.cell.size-20 {
+  --size: 20
+}
+
+.cell.blue {
+  background-color: var(--blue);
+}
+
+.cell.red {
+  background-color: var(--red);
+}
+
+.cell.yellow {
+  background-color: var(--yellow);
+}
+
+.cell.purple {
+  background-color: var(--purple);
+}
+
+.row:nth-child(1) {
+  --delay: 1;
+  --offset: 150px
+}
+
+.row:nth-child(2) {
+  --delay: 2;
+  --offset: -100px
+}
+
+.row:nth-child(3) {
+  --delay: 3;
+  --offset: 200px
+}
+
+@keyframes load-row {
+  100% {
+    translate: 0;
+  }
+}
